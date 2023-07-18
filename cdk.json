@@ -17,7 +17,7 @@
     ]
   },
   "context": {
-    "default-account": "YOUR_AWS_ACCOUNT_ID",
+    "default-account": "ham1n",
     "default-region": "us-west-1",
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/core:checkSecretUsage": true,
