@@ -5,10 +5,10 @@ import pandas as pd
 expenses = pd.DataFrame(columns=['Date', 'Category', 'Amount'])
 
 # Sidebar - Add expense
-st.sidebar.header("Add New Expense")
+st.sidebar.header("입력란")
 
 date = st.sidebar.date_input("Date", value=pd.Timestamp.now())
-category = st.sidebar.selectbox("Category", ['Food', 'Rent', 'Transportation', 'Other'])
+category = st.sidebar.selectbox("Category", ['식비', '교통비', '경조사비', '병원'])
 amount = st.sidebar.number_input("Amount", value=0.0)
 
 if st.sidebar.button("Add Expense"):
@@ -17,9 +17,9 @@ if st.sidebar.button("Add Expense"):
     st.sidebar.success("Expense added successfully!")
 
 # Main content
-st.title("Personal Finance Tracker")
+st.title("가계부")
 
-st.header("Expenses")
+st.header("내역")
 st.dataframe(expenses)
 
 st.header("Summary")
@@ -32,6 +32,6 @@ st.bar_chart(expenses_by_category)
 
 # Save expenses to Excel
 if st.button("Save to Excel"):
-    file_name = "expenses.xlsx"
+    file_name = "moneybook.csv"
     expenses.to_excel(file_name, index=False)
     st.success(f"Data saved to {file_name}")
