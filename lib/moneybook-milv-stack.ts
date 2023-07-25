@@ -7,7 +7,7 @@ export class MoneybookMilvStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new S3BaseStack(this, 's3Stack', props);
+    new S3BaseStack(this, 's3Stack', props); // s3 stack 선언
 
     // The code that defines your stack goes here
 
